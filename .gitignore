@@ -12,6 +12,7 @@
 # Parameters
 /app/config/parameters.yml
 /app/config/parameters.ini
+.env
 
 # Managed by Composer
 /app/bootstrap.php.cache
@@ -58,3 +59,5 @@
 # Metronic
 /web/*
 log/capistrano.log
+
+
