@@ -58,3 +58,5 @@
 # Metronic
 /web/*
 log/capistrano.log
+
+.env
