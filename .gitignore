@@ -22,17 +22,7 @@
 .web-server-pid
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
-/web/assets/
-/web/metronic/
-/web/img/
-/web/fonts/
-/web/css/login.css
-/web/css/app.css
-/web/css/fonts/
-/web/js/login.js
-/web/js/app.js
+/public/vendor
 
 # PHPUnit
 /app/phpunit.xml

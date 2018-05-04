@@ -1,0 +1,23 @@
+{
+  "name": "symfony-user-package",
+  "title": "Symfony User Package",
+  "version": "1.0",
+  "author": "Kamil Nawrotkiewicz",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/kamil-nawrotkiewicz/symfony-user-package"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
+  }
+}
