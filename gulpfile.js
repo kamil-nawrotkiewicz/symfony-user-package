@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 
 //Variables
-var packageLocalization = './vendor/blackrockstrap-sb-admin-2/';
+var packageLocalization = './vendor/blackrockdigital/startbootstrap-sb-admin-2/';
 var destination = './public/';
 
 // Set the banner content
@@ -33,7 +33,7 @@ gulp.task('less', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
-    return gulp.src(packageLocalization+'dist/css/sb-admin-2.css')
+    return gulp.src([packageLocalization+'dist/css/sb-admin-2.css', 'assets/*.css'])
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(destination+'dist/css'))
@@ -54,7 +54,7 @@ gulp.task('js', function() {
 
 // Minify JS
 gulp.task('minify-js', ['js'], function() {
-    return gulp.src(packageLocalization+'js/sb-admin-2.js')
+    gulp.src([packageLocalization+'js/sb-admin-2.js'])
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))

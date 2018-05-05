@@ -45,8 +45,8 @@
 # PhpStorm
 .idea/*
 
-# Metronic
-/web/*
+# Public
+/public/*
 log/capistrano.log
 
 .env
