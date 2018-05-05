@@ -1,0 +1,23 @@
+<div class="sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            {% include('admin/search.html.twig') %}
+            <li>
+                <a href="/"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ path('user_index') }}">List</a>
+                    </li>
+                    <li>
+                        <a href="/">Permissions</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
