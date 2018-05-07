@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamil-nawrotkiewicz/symfony-user-package.git"
+    "url": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
   },
   "keywords": [
     "symfony"
@@ -20,10 +20,6 @@
   },
   "homepage": "https://github.com/kamil-nawrotkiewicz/symfony-user-package#readme",
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
-  },
   "dependencies": {
     "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
