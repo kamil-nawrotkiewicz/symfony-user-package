@@ -7,9 +7,11 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 #### In the main project directory, run the following commands
 
 1. Make environment file .env and set database connection:
+```
+# Database Connection
 
-`# Database Connection
- DATABASE_URL=postgresql://user:password@localhost/database-name`
+ DATABASE_URL=postgresql://user:password@localhost/database-name
+```
 
 2) `composer install`
 
