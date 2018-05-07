@@ -52,6 +52,16 @@ gulp.task('js', function() {
         }))
 })
 
+// Copy Images for DataTable to dist
+gulp.task('imgDataTable', function() {
+    return gulp.src([packageLocalization+'vendor/datatables/images/*.png'])
+        .pipe(header(banner, { pkg: pkg }))
+        .pipe(gulp.dest(destination+'vendor/images'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+})
+
 // Minify JS
 gulp.task('minify-js', ['js'], function() {
     gulp.src([packageLocalization+'js/sb-admin-2.js'])
@@ -105,7 +115,7 @@ gulp.task('copy', function() {
 })
 
 // Run everything
-gulp.task('default', ['minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['minify-css', 'minify-js', 'imgDataTable', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
