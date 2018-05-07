@@ -1,12 +1,24 @@
 {
   "name": "symfony-user-package",
-  "title": "Symfony User Package",
-  "version": "1.0",
-  "author": "Kamil Nawrotkiewicz",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/kamil-nawrotkiewicz/symfony-user-package"
+  "version": "1.0.0",
+  "description": "User package",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamil-nawrotkiewicz/symfony-user-package.git"
+  },
+  "keywords": [
+    "symfony"
+  ],
+  "author": "Kamil Nawrotkiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kamil-nawrotkiewicz/symfony-user-package/issues"
+  },
+  "homepage": "https://github.com/kamil-nawrotkiewicz/symfony-user-package#readme",
   "devDependencies": {},
   "repository": {
     "type": "git",
