@@ -6,15 +6,20 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 
 #### In the main project directory, run the following commands
 
-1) `composer install`
+1. Make environment file .env and set database connection:
 
-2) `npm install`
+`# Database Connection
+ DATABASE_URL=postgresql://user:password@localhost/database-name`
 
-2) `bower install`
+2) `composer install`
 
-4) `gulp`
+3) `npm install`
 
-5) Make connection with your postgreSQL database and run: 
+4) `bower install`
 
-`php bin/console doctrine:migrations:migrate`
+5) `gulp`
+
+5) `php bin/console doctrine:migrations:migrate`
+
+
 
