@@ -21,6 +21,133 @@ a:focus, a:hover {
     }
 }
 
+/* Table Show */
+.table_show tr:first-child td, .table_show tr:first-child th {
+    border-top-width: 0;
+}
+/* End - Table Show*/
+
+/* Buttons */
+.btn-success {
+    color: #fff;
+    background-color: #18bc9c;
+    border-color: #18bc9c
+}
+
+.btn-success.focus, .btn-success:focus {
+    color: #fff;
+    background-color: #128f76;
+    border-color: #0a4b3e
+}
+
+.btn-success.active, .btn-success:active, .btn-success:hover, .open > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #128f76;
+    border-color: #11866f
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open > .btn-success.dropdown-toggle.focus, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #0e6f5c;
+    border-color: #0a4b3e
+}
+
+.btn-success.active, .btn-success:active, .open > .btn-success.dropdown-toggle {
+    background-image: none
+}
+
+.btn-success.disabled.focus, .btn-success.disabled:focus, .btn-success.disabled:hover, .btn-success[disabled].focus, .btn-success[disabled]:focus, .btn-success[disabled]:hover, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:hover {
+    background-color: #18bc9c;
+    border-color: #18bc9c
+}
+
+.btn-success .badge {
+    color: #18bc9c;
+    background-color: #fff
+}
+/* End - Button */
+
+/* Button Primary */
+.btn-primary {
+    color: #fff;
+    background-color: #2c3e50;
+    border-color: #2c3e50
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #1a252f;
+    border-color: #000
+}
+
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #1a252f;
+    border-color: #161f29
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open > .btn-primary.dropdown-toggle.focus, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #0d1318;
+    border-color: #000
+}
+
+.btn-primary.active, .btn-primary:active, .open > .btn-primary.dropdown-toggle {
+    background-image: none
+}
+
+.btn-primary.disabled.focus, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled].focus, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+    background-color: #2c3e50;
+    border-color: #2c3e50
+}
+
+.btn-primary .badge {
+    color: #2c3e50;
+    background-color: #fff
+}
+/* End - Button*/
+
+/* Button Default */
+
+.btn-default {
+    color: #fff;
+    background-color: #95a5a6;
+    border-color: #95a5a6
+}
+
+.btn-default.focus, .btn-default:focus {
+    color: #fff;
+    background-color: #798d8f;
+    border-color: #566566
+}
+
+.btn-default.active, .btn-default:active, .btn-default:hover, .open > .btn-default.dropdown-toggle {
+    color: #fff;
+    background-color: #798d8f;
+    border-color: #74898a
+}
+
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .btn-default.dropdown-toggle.focus, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #687b7c;
+    border-color: #566566
+}
+
+.btn-default.active, .btn-default:active, .open > .btn-default.dropdown-toggle {
+    background-image: none
+}
+
+.btn-default.disabled.focus, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled].focus, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover {
+    background-color: #95a5a6;
+    border-color: #95a5a6
+}
+
+.btn-default .badge {
+    color: #95a5a6;
+    background-color: #fff
+}
+/* End - Button */
+
 .nav {
     margin-bottom: 0;
     padding-left: 0;
@@ -793,3 +920,27 @@ a:focus, a:hover {
     background-color: #2c3e50;
     outline: 0;
 }
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+/* Paggination */
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+}
+/* End paggination */
+=======
+
