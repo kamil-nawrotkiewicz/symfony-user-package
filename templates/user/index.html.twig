@@ -1,41 +1,74 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- DataTables CSS -->
+    <link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+{% endblock %}
+
 {% block title %}User index{% endblock %}
 
+{% block dashboard %}User index{% endblock %}
+
 {% block body %}
-    <h1>User index</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{{ path('user_new') }}" class="btn btn-md btn-success">
+                <i class="fa fa-plus" aria-hidden="true"></i> Add new user
+            </a>
+        </div>
+    </div>
+    <div class="row margin-top-15">
+        <div class="col-lg-12">
+            <table class="table table-striped table-bordered table-hover" id="userIndex">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Id</th>
+                        <th style="width: 10%;">ExtId</th>
+                        <th style="width: 55%;">Name</th>
+                        <th style="width: 10%;">Email</th>
+                        <th style="width: 15%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.externalId }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-sm btn-default">show</a>
+                            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-sm btn-primary">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ExternalId</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.externalId }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+{% block javascripts %}
+    {{ parent() }}
+    <!-- DataTables JavaScript -->
+    <script src="/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <!-- Tables - Use for reference -->
+    <script>
+        $(document).ready(function() {
+            $('#userIndex').DataTable({
+                responsive: true
+            });
+        });
+    </script>
 {% endblock %}
