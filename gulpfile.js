@@ -52,6 +52,7 @@ gulp.task('js', function() {
         }))
 })
 
+
 // Copy Images for DataTable to dist
 gulp.task('imgDataTable', function() {
     return gulp.src([packageLocalization+'vendor/datatables/images/*.png'])
@@ -116,6 +117,7 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default', ['minify-css', 'minify-js', 'imgDataTable', 'copy']);
+
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
