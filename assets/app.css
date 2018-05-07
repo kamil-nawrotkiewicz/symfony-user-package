@@ -21,6 +21,12 @@ a:focus, a:hover {
     }
 }
 
+/* Table Show */
+.table_show tr:first-child td, .table_show tr:first-child th {
+    border-top-width: 0;
+}
+/* End - Table Show*/
+
 /* Buttons */
 .btn-success {
     color: #fff;
