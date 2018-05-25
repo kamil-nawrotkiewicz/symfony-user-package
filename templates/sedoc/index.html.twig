@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SEDOC.pl Task{% endblock %}
+
+{% block dashboard %}SEDOC.pl - Task{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-4">
+            Zdjęcie na czas rozpoczęcia zadania:
+            <br><i>{{ taskImg }}</i>
+            <div class="img-presentation">
+                <img src="{{ taskImg }}"
+                     alt="task image"
+                     class="img-fitbox article-presentation-img">
+            </div>
+
+            <br><i>Pierwsze zdjęcie z sekcji Aktualności</i>
+        </div>
+        <div class="col-md-1">
+            {% if comparison == true %}
+                <div class="alert alert-success margin-top-80">
+                    <i class="fa fa-check font-size-20"></i>
+                </div>
+            {% else %}
+
+                <div class="alert alert-danger margin-top-80">
+                    <i class="fa fa-times font-size-20"></i>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            Aktualne zdjęcie:
+            <br><i>{{ actualImg }}</i>
+            <div class="img-presentation">
+                <img src="{{ actualImg }}"
+                     alt="task image"
+                     class="img-fitbox article-presentation-img">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
