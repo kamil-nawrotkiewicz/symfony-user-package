@@ -943,3 +943,23 @@ a:focus, a:hover {
 }
 /* End paggination */
 
+.img-presentation {
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #e8e8e8;
+}
+
+.article-presentation-img {
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.font-size-20 {
+    font-size: 20px !important;
+}
+
+.margin-top-80 {
+    margin-top: 80px;
+}
