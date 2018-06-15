@@ -40,3 +40,4 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 `curl -X POST "localhost:82/api/user/new?fullName=kamil&username=kamil&email=kamil.nawrotkiewicz@icloud.com&password=kamil" -H "accept: application/json"`
 
 
+
