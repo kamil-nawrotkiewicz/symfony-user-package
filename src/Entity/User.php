@@ -58,11 +58,21 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @var string
+     *
+     */
+    private $plainPassword;
+
+    /**
      * @var array
      *
      * @ORM\Column(type="json")
      */
     private $roles = [];
+
+    public function __construct() {
+        $this->roles = array('ROLE_ADMIN');
+    }
 
     public function getId(): int
     {
@@ -170,5 +180,21 @@ class User implements UserInterface, \Serializable
     {
         // add $this->salt too if you don't use Bcrypt or Argon2i
         [$this->id, $this->username, $this->password] = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword():? string
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     */
+    public function setPlainPassword(string $plainPassword): void
+    {
+        $this->plainPassword = $plainPassword;
     }
 }
