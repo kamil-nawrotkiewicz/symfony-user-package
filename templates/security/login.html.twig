@@ -1,0 +1,31 @@
+{% extends 'login.html.twig' %}
+
+{% block panelTitle %}
+    <i class="fa fa-lock" aria-hidden="true"></i> Sign In
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+    <form action="{{ path('security_login') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="_password" class="form-control" />
+            </div>
+            <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to') }}"/>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Sing In
+            </button>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -23,5 +23,9 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 
 5) `php bin/console doctrine:migrations:migrate`
 
+6) `php bin/console doctrine:fixtures:load`
+
+7) `Log in using: username(admin), password(admin)`
+
 
 
