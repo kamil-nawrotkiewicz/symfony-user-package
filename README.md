@@ -27,5 +27,16 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 
 7) `Log in using: username(admin), password(admin)`
 
+## How using API
+
+#### Examples
+
+1) Get users:
+
+`curl -X GET "localhost/api/user/1” -H "accept: application/json"`
+
+2) Set user:
+
+`curl -X POST "localhost:82/api/user/new?fullName=kamil&username=kamil&email=kamil.nawrotkiewicz@icloud.com&password=kamil" -H "accept: application/json"`
 
 
