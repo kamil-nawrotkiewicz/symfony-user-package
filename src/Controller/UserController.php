@@ -104,14 +104,14 @@ class UserController extends Controller
      * @param User $user
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function generateApi(Request $request, User $user){
-        $token = '8172391hasdasd';
-        $user->setApiKey($token);
+    public function generateApi(Request $request, User $user, TokenAuthenticator $genToken){
+        $token = $genToken->generateAccessToken();
+        $user->setApiKey(hash('sha256', $token));
         $this->getDoctrine()->getManager()->flush();
-
-        $message = 'Twój token to: <strong>'.$token.'</strong>
-                    <br><br>
-                    Upewnij się, że token został skopiowany, nie będzie możliwości wyświetlenia go ponownie!';
+        $message = $this->render('user/hash.html.twig', [
+            'token' => $token,
+            'username'  => $user->getUsername()
+        ])->getContent();
         $this->addFlash('success', $message);
 
         return $this->redirectToRoute('user_index');

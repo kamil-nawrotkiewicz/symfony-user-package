@@ -33,11 +33,11 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 
 1) Get users:
 
-`curl -X GET "localhost/api/user/1” -H "accept: application/json"`
+`curl -H "X-AUTH-TOKEN: REAL" -X GET localhost/api/user/1`
 
 2) Set user:
 
-`curl -X POST "localhost:82/api/user/new?fullName=kamil&username=kamil&email=kamil.nawrotkiewicz@icloud.com&password=kamil" -H "accept: application/json"`
+`curl -H "X-AUTH-TOKEN: REAL" -X POST "localhost/api/user/new?fullName=jan&username=jan_kowalski&email=jan.kowalski@email.pl&password=jan&plainPassword=jan"`
 
 
 

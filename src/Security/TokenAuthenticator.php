@@ -36,7 +36,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator {
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        $apiKey = $credentials['token'];
+        $apiKey = hash('sha256', $credentials['token']);
 
         if (null === $apiKey)
         {
@@ -90,5 +90,9 @@ class TokenAuthenticator extends AbstractGuardAuthenticator {
     public function supportsRememberMe()
     {
         return false;
+    }
+
+    public function generateAccessToken() {
+        return bin2hex(openssl_random_pseudo_bytes(20));
     }
 }
