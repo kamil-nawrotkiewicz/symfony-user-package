@@ -30,7 +30,7 @@
                     <th style="width: 25%;">FullName</th>
                     <th style="width: 20%;">Username</th>
                     <th style="width: 10%;">Email</th>
-                    <th style="width: 15%;"></th>
+                    <th style="width: 18%;"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,6 +43,7 @@
                         <td>
                             <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-md btn-default">show</a>
                             <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-md btn-primary">edit</a>
+                            <a href="{{ path('generate_api', {'id': user.id}) }}" class="btn btn-md btn-warning">ApiKey</a>
                         </td>
                     </tr>
                 {% else %}
