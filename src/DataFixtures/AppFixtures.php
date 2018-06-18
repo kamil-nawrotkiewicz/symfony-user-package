@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
     {
         return [
             // $userData = [$fullname, $username, $password, $email, $roles];
-            ['Administrator', 'admin', 'admin', 'admin', ['ROLE_ADMIN']],
+            ['Administrator', 'admin', 'admin', 'admin@inpanel.pl', ['ROLE_ADMIN']],
         ];
     }
 }
