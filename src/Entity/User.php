@@ -1,18 +1,9 @@
 <?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -33,6 +24,7 @@ class User implements UserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="validate.not_blank")
      */
     private $fullName;
 
@@ -40,6 +32,7 @@ class User implements UserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(type="string", unique=true)
+     * @Assert\NotBlank(message="validate.not_blank")
      */
     private $username;
 
@@ -47,6 +40,11 @@ class User implements UserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(type="string", unique=true)
+     * @Assert\NotBlank(message="validate.not_blank")
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
@@ -59,7 +57,8 @@ class User implements UserInterface, \Serializable
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="validate.not_blank")
+     * @Assert\Length(max=4096)
      */
     private $plainPassword;
 
@@ -67,13 +66,14 @@ class User implements UserInterface, \Serializable
      * @var array
      *
      * @ORM\Column(type="json")
+     * @Assert\NotBlank()
      */
     private $roles = [];
 
     /**
      * @ORM\Column(type="string", unique=true)
      */
-    private $apiKey;
+    private $apiKey = '';
 
     public function __construct() {
         $this->roles = array('ROLE_ADMIN');
