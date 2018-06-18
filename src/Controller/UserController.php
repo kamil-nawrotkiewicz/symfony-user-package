@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Security\TokenAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -93,6 +94,25 @@ class UserController extends Controller
             $em->remove($user);
             $em->flush();
         }
+
+        return $this->redirectToRoute('user_index');
+    }
+
+    /**
+     * @Route("/{id}/generateApi", name="generate_api")
+     * @param Request $request
+     * @param User $user
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function generateApi(Request $request, User $user, TokenAuthenticator $genToken){
+        $token = $genToken->generateAccessToken();
+        $user->setApiKey(hash('sha256', $token));
+        $this->getDoctrine()->getManager()->flush();
+        $message = $this->render('user/hash.html.twig', [
+            'token' => $token,
+            'username'  => $user->getUsername()
+        ])->getContent();
+        $this->addFlash('success', $message);
 
         return $this->redirectToRoute('user_index');
     }

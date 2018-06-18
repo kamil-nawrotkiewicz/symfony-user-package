@@ -230,6 +230,9 @@
     "symfony/serializer": {
         "version": "v4.1.0"
     },
+    "symfony/templating": {
+        "version": "v4.1.0"
+    },
     "symfony/translation": {
         "version": "3.3",
         "recipe": {

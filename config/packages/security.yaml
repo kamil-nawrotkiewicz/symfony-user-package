@@ -9,8 +9,14 @@ security:
         # In this example, users are stored via Doctrine in the database
         # To see the users at src/App/DataFixtures/ORM/LoadFixtures.php
         # To load users from somewhere else: https://symfony.com/doc/current/security/custom_provider.html
-        database_users:
-            entity: { class: App\Entity\User, property: username }
+        users:
+            entity:
+                class: App\Entity\User
+                property: username
+        api_users:
+            entity:
+                class: App\Entity\User
+                property: apiKey
 
     # https://symfony.com/doc/current/security.html#initial-security-yml-setup-authentication
     firewalls:
@@ -29,6 +35,7 @@ security:
             # This allows the user to login by submitting a username and password
             # Reference: https://symfony.com/doc/current/security/form_login_setup.html
             form_login:
+                provider: users
                 # The route name that the login form submits to
                 check_path: security_login
                 # The name of the route where the login form lives
@@ -46,6 +53,11 @@ security:
                 path: security_logout
                 # The name of the route to redirect to after logging out
                 target: security_login
+
+            guard:
+                provider: api_users
+                authenticators:
+                    - App\Security\TokenAuthenticator
 
     access_control:
         # this is a catch-all for the admin area
