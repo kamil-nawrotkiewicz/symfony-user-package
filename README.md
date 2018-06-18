@@ -37,7 +37,7 @@ In 1.0 package represent only basic possibilities. Foundation of this package is
 
 2) Set user:
 
-`curl -H "X-AUTH-TOKEN: REAL" -X POST "localhost/api/user/new?fullName=jan&username=jan_kowalski&email=jan.kowalski@email.pl&password=jan&plainPassword=jan"`
+`curl -H "X-AUTH-TOKEN: REAL" -X POST "localhost/api/user/new?fullName=jan&username=jan_kowalski&email=jan.kowalski@email.pl&password=jan"`
 
 
 
