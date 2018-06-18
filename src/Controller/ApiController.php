@@ -57,6 +57,7 @@ class ApiController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $username = $request->get('username', '');
             $email = $request->get('email', '');
+            $password = $request->get('password', '');
 
             //get repository
             $user = $em->getRepository(User::class)->findOneBy(
@@ -76,8 +77,9 @@ class ApiController extends Controller {
             $user->setFullName($request->get('fullName'));
             $user->setUsername($username);
             $user->setEmail($request->get('email'));
-            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+            $password = $passwordEncoder->encodePassword($user, $password);
             $user->setPassword($password);
+            $user->setPlainPassword($password);
 
             //validation
             $errors = $validator->validate($user);
