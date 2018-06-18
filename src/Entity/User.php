@@ -70,6 +70,11 @@ class User implements UserInterface, \Serializable
      */
     private $roles = [];
 
+    /**
+     * @ORM\Column(type="string", unique=true)
+     */
+    private $apiKey;
+
     public function __construct() {
         $this->roles = array('ROLE_ADMIN');
     }
@@ -196,5 +201,21 @@ class User implements UserInterface, \Serializable
     public function setPlainPassword(string $plainPassword): void
     {
         $this->plainPassword = $plainPassword;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param mixed $apiKey
+     */
+    public function setApiKey($apiKey): void
+    {
+        $this->apiKey = $apiKey;
     }
 }

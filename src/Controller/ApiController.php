@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Security\TokenAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,12 +22,20 @@ class ApiController extends Controller {
     /**
      * @Route("/{id}", methods="GET")
      */
-    public function show(User $user): Response
+    public function show(Request $request, User $user, TokenAuthenticator $token): Response
     {
-        $encoders = array(new JsonEncoder());
-        $normalizers = array(new ObjectNormalizer());
-        $serializer = new Serializer($normalizers, $encoders);
-        $user->setPassword('');
+        if($token->supports($request))
+        {
+            $encoders = array(new JsonEncoder());
+            $normalizers = array(new ObjectNormalizer());
+            $serializer = new Serializer($normalizers, $encoders);
+            $user->setPassword('');
+            $user->setApiKey('');
+        } else {
+            return new JsonResponse([
+                'message' => 'Authentication Required'
+            ]);
+        }
 
         return new Response($serializer->serialize($user, 'json'));
     }
