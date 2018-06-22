@@ -1,3 +1,7 @@
-index:
+user:
     path: /
     controller: App\Controller\UserController::index
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index

@@ -36,7 +36,6 @@
 
 # Composer dependencies
 /vendor/
-/composer.lock
 
 # Bower dependencies
 /node_modules
